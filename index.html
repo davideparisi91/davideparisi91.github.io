@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1, user-scalable=no">
+	<title>EmergencyFinder</title>
+	<link rel="stylesheet" type="text/css" href="https://rawgit.com/balde73/creativeGo/Staging/css/creativeGo.css">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC3r5VYy6WFPtkxrXPT9WmtUlZdbWEKhI8"></script>
+	<script src="assets/angular.js"></script>
+	<script type="text/javascript" src="js/build.js"></script>
+</head>
+<body ng-controller="UserController">
+	<div class="all-height map-box">
+		<div class="controller all-height m-card-2">
+			<!-- testata -->
+			<div>
+				<div class="center padd10">
+					<form ng-submit="search()">
+						<input ng-model="q" class="all-width" name="" placeholder="ricerca" required>
+						<select ng-model="dictionary" class="all-width">
+							<option value="">TIPOLOGIA EMERGENZA</option>
+							<option value="VVF">Vigili del fuoco</option>
+							<option value="SOCC_SAN">Emergenza sanitaria</option>
+							<option value="CC_PDS">Carabinieri - Polizia</option>
+						</select>
+						<div class="split-box split-box-4">
+							<input ng-model="lat" class="split" type="decimal" placeholder="lat">
+							<input ng-model="long" class="split" type="decimal" placeholder="long">
+							<input ng-model="radius" class="split" type="number" placeholder="radius">
+							<input type="submit" class="split Bgreen" value="invia">
+						</div>
+					</form>
+					<div class="paddTB10 left font80">
+						<span class="wb">Trento</span> lat: <span class="wb">46.08055</span> long: <span class="wb">11.05031</span>
+					</div>
+				</div>
+			</div>
+			<div ng-if="tweets" class="">
+				<div ng-if="!tweets.length" class="padd10">
+					No results :(
+				</div>
+			</div>
+			<div class="space-line op2"></div>
+			<!-- corpo -->
+			<div class="scroll-container" ng-if="tweets.length">
+				<ul class="padd20">
+					<li ng-repeat="tweet in tweets" class="tweet-card">
+						<div class="font70 right">{{tweet.created_at}}</div>
+						<image-text>
+							<div class="image">
+								<div class="Blight-gray all-height">
+									<img ng-src="{{tweet.user.profile_image_url}}" class="all-width">
+								</div>
+								<img class="tilde" ng-src="https://pbs.twimg.com/profile_images/880136122604507136/xHrnqf1T_bigger.jpg">
+							</div>
+							<div class="text">
+								<div class="paddTB5">
+									<h2 class="wb">-{{ tweet.user.name }}</h2>
+									<p>{{ tweet.user.location }}</p>
+								</div>
+							</div>
+						</image-text>
+						<div ng-if="tweet.affinity!=null" class="badge font80">affinity: {{tweet.affinity}}</div>
+						<div class="paddTB10 font80">
+							{{ tweet.text }}
+						</div>
+						<div class="location">
+							
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div id="map" class="all-height map">
+		</div>
+	</div>
+
+
+	<div class="pop-up-tip Bwhite padd10" ng-show="facebook.live">
+		<a target="_blank" href="{{ facebook.live }}">
+			<div class="wb">
+				Guarda la mappa live dei video Facebook!
+			</div>
+			<div class="paddT5">
+				<div class="font80 op8 paddB10">
+					{{ facebook.live }}
+				</div>
+				<img src="/assets/img/livemap.JPG" class="live">
+			</div>
+		</a>
+	</div>
+
+</body>
+</html>

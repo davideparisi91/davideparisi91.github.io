@@ -1,0 +1,219 @@
+body{
+	
+}
+
+.welcome-page{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: url("/assets/img/explore.jpg");
+	background-size: cover;
+	z-index: 100;
+}
+
+input{
+	height: 44px;
+	padding: 10px;
+	line-height: 24px;
+}
+
+input.mini{
+	height: 28px;
+	line-height: 26px;
+	font-size: 90%;
+	padding: 0;
+}
+
+select{
+	height: 3em;
+}
+
+.Cblack{
+	color: black;
+}
+
+.Cgreen{
+	color: #98D57D;
+}
+.Bgreen{
+	background-color: #98D57D;
+	color: black;
+}
+
+.max-width{
+	max-width: 420px;
+	width: 95%;
+	margin: 0 auto;
+}
+
+[ng-click]{
+	cursor: pointer;
+}
+
+.flex{
+	display: flex;
+}
+
+.flex.fd-row{
+	flex-direction: row;
+}
+.flex.fd-column{
+	flex-direction: column;
+}
+
+i{
+	height: 24px;
+	cursor: initial;
+}
+
+.dot{
+	height: 12px;
+	width: 12px;
+	border-radius: 100%;
+	display: inline-block;
+	margin-right: 1px;
+}
+
+.icon-text{
+	line-height: 24px;
+}
+.icon-text.ptleft{
+	padding-left: 24px;
+}
+
+.occupy-all{
+	flex: 1;
+}
+
+.map-box{
+	display: flex;
+	flex-direction: row;
+}
+
+.map-box .map{
+	flex: 1;
+}
+
+.map-box .controller{
+	display: flex;
+	height: 100%;
+	width: 100%;
+	max-width: 420px;
+	flex-direction: column;
+}
+
+/* menu-laterale */
+
+.tweet-card{
+	margin: 10px;
+	box-shadow: 0 0 10px rgba(0,0,0,.2);
+}
+
+.place-intro{
+	display: none;
+}
+
+.controller .scroll-container{
+	flex: 1;
+	overflow: hidden;
+	overflow-y: auto;
+}
+
+image-text{
+	display: block;
+	position: relative;
+	min-height: 50px;
+}
+
+image-text .image{
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 50px;
+	width: 	50px;
+	border-radius: 100%;
+}
+
+image-text .image .tilde{
+	position: absolute;
+	top: -10px;
+	left: -10px;
+	height: 20px;
+	width: 20px;
+	border-radius: 100%;
+}
+
+image-text .text{
+	padding-left: 60px;
+}
+
+.badge{
+	margin-top: 6px;
+	padding: 3px 6px;
+	border-radius: 4px;
+	border: 1px solid;
+	border-color: inherit;
+	display: inline-block;
+	background: #a9ff75;
+}
+
+.badge .i-align, .badge i{
+	font-size: 16px;
+	line-height: 16px;
+	display: inline-flex;
+	vertical-align: middle;
+	height: auto;
+}
+
+.utils{
+	display: none;
+}
+
+.bikes i{
+	padding: 4px 6px;
+}
+
+.pop-up-tip{
+	position: fixed;
+	bottom: 2rem;
+	right: 2rem;
+	width:  auto;
+}
+
+.pop-up-tip .live{
+	height: 100%;
+	width: 100%;
+	max-width: 400px;
+}
+
+img.icon{
+	height: 4rem;
+	width: 4rem;
+}
+
+@-webkit-keyframes appear {
+    0% {
+        opacity: 0;
+    }
+    45% {
+        opacity: 0.25;
+    }
+    70% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 420px) {
+	.pop-up-tip{
+		position: relative;
+		width: 100%;
+		padding-top: 10px;
+		bottom: 0;
+		right: 0;
+	}
+}
