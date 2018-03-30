@@ -218,12 +218,13 @@ img.icon{
     }
 }
 
-@media screen and (max-width: 420px) {
-	.pop-up-tip{
+@media screen and (max-width: 720px) {
+	.pop-up-tip, .post-new{
 		position: relative;
 		width: 100%;
 		padding-top: 10px;
 		bottom: 0;
 		right: 0;
+		top: 0;
 	}
 }
