@@ -15,7 +15,7 @@
 </head>
 <body ng-controller="UserController">
 	<div class="all-height map-box">
-		<div class="controller all-height m-card-2">
+		<div class="controller all-height m-card-2 anchor">
 			<!-- testata -->
 			<div>
 				<div class="center padd10">
@@ -77,6 +77,21 @@
 		</div>
 
 		<div id="map" class="all-height map">
+		</div>
+	</div>
+
+	<div class="padd10 post-new">
+		<div class="paddB10">
+			posta su twitter come <span class="wb"><a href="https://twitter.com/Beta80Hackathon">Beta80Hackathon</a></span>
+		</div>
+		<form ng-submit="post()">
+			<div class="">
+				<input required ng-model="postStatus" class="all-width" placeholder="status">
+				<input type="submit" class="split all-width" value="invia">
+			</div>
+		</form>
+		<div class="" ng-show="advise">
+			{{ advise }}
 		</div>
 	</div>
 

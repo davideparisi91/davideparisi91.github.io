@@ -193,6 +193,16 @@ img.icon{
 	width: 4rem;
 }
 
+.post-new{
+	position: absolute;
+	top: 50px;
+	right: 50px;
+	width: 300px;
+	height: auto;
+	box-shadow: 0 0 20px rgba(0,0,0,.3);
+	background: white;
+}
+
 @-webkit-keyframes appear {
     0% {
         opacity: 0;
